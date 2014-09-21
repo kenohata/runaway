@@ -17,7 +17,7 @@ gulp.task "jade", ->
   .pipe wrap deps: []
   .pipe gulp.dest "js/lib/templates"
 
-gulp.task "rjs", ->
+gulp.task "rjs", ["coffee", "jade"],  ->
   rjs
     mainConfigFile: "js/lib/config.js"
     baseUrl: "js/lib"
