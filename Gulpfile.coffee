@@ -17,6 +17,10 @@ gulp.task "jade", ->
   .pipe wrap deps: []
   .pipe gulp.dest "js/lib/templates"
 
+gulp.task "watch", ->
+  gulp.watch "coffeescripts/**", ["coffee"]
+  gulp.watch "templates/**", ["jade"]
+
 gulp.task "rjs", ["coffee", "jade"],  ->
   rjs
     mainConfigFile: "js/lib/config.js"
