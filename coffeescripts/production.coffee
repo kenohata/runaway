@@ -1,3 +1,5 @@
-require ["jquery"], ($) ->
+require ["jquery", "views/application_view"], ($, AppView) ->
   $ ->
-    alert "load"
+    $el  = $ '#app'
+    view = new AppView(el: $el)
+    view.render()
